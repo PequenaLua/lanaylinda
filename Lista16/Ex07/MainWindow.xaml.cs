@@ -52,7 +52,7 @@ namespace Ex07
 
         private void btnIRA(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"{h.CalcularIRA():0.00}");
+            MessageBox.Show(h.CalcularIRA().ToString(), "IRA");
         }
     }
 }
