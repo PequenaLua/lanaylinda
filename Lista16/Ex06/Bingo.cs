@@ -8,48 +8,36 @@ namespace Ex06
 {
     class Bingo
     {
-        private int numBolas = 50;
-        private int[] bolas = new int[100];
-        private int[] sorteadas = new int[100];
-        private int j = 0;
-        public void Iniciar(int numBolas)
+        private int numBolas;
+        private int[] v;
+        private int c;
+        public void Iniciar(int n)
         {
-            this.numBolas = numBolas;
-            for(int i = 0; i < 100; i++) bolas[i] = 0;
+            if(n >= 10 && n <= 100)
+            numBolas = n;
+            v = new int[numBolas];
+            int k = 0;
+            Random r = new Random();
+            while (k < numBolas)
+            {
+                int m = r.Next(1, numBolas + 1);
+                if (Array.IndexOf(v, m) == -1)
+                {
+                    v[k] = m;
+                    k++;
+                }
+            }
         }
         public int Proximo()
         {
-            if (j < 50)
+            if (c < numBolas)
             {
-                Random r = new Random();
-
-                bool ok = false;
-                int s = 0;
-                while (ok == false)
-                {
-                    s = r.Next(1, numBolas);
-                    for (int k = 0; k < 100; k++)
-                    {
-                        if (s == bolas[k])
-                        {
-                            ok = false;
-                            break;
-                        }
-                        else ok = true;
-                    }
-                }
-                sorteadas[j] = s;
-                j++;
-                return s;
+                int x = v[c];
+                c++;
+                return x;
             }
-            else return 0;
+            return -1;
         }
-       public int[] Sorteados()
-        {
-            int[] vetor = new int[j];
-            Array.Copy(sorteadas, vetor, j);
-            Array.Sort(vetor);
-            return vetor;
-        }
+
     }
 }

@@ -20,24 +20,29 @@ namespace Ex06
     /// </summary>
     public partial class MainWindow : Window
     {
-        Bingo b = new Bingo();
+        Bingo b;
         public MainWindow()
         {
             InitializeComponent();
         }
         
         private void btnIniciar(object sender, RoutedEventArgs e)
-        {         
+        {
+            b = new Bingo();
             b.Iniciar(int.Parse(txtNumeroDeBolas.Text));
+            txtSorteados.Text = "";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Bingo b = new Bingo();
-            txtSort.Text = b.Proximo().ToString();
-            int[] vetor = b.Sorteados();
-            vetor[0] = 0;
-            foreach (int k in vetor) txtSorteados.Text += k + " - ";
+            int n = b.Proximo();
+            txtSort.Text = n.ToString();
+            txtSorteados.Text += n.ToString() + " ";
+        }
+
+        private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (txtNumeroDeBolas != null) txtNumeroDeBolas.Text = slider.Value.ToString();
         }
     }
 }
