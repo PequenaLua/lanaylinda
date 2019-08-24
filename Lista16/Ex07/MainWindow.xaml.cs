@@ -31,6 +31,9 @@ namespace Ex07
             h = new Historico();
             h.SetNome(txtNome.Text);
             list.Items.Clear();
+            txtDisciplina.Clear();
+            txtSemestre.Clear();
+            txtMedia.Clear();
         }
 
         private void btnInserir(object sender, RoutedEventArgs e)
@@ -43,16 +46,22 @@ namespace Ex07
             if (chAp.IsChecked == true) ok = true;
             else ok = false;
             x.SetAprovado(ok);
+            h.Inserir(x);
             list.Items.Add(x.ToString());
+            txtDisciplina.Clear();
+            txtSemestre.Clear();
+            txtMedia.Clear();
         }
         private void btnExcluir(object sender, RoutedEventArgs e)
         {
-            list.Items.Remove(list.SelectedItem); 
+            int s = list.SelectedIndex;
+            list.Items.Remove(list.SelectedItem);
+            h.Apagar(s);
         }
 
         private void btnIRA(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(h.CalcularIRA().ToString(), "IRA");
+            MessageBox.Show(h.CalcularIRA().ToString("0.0"), "IRA");
         }
     }
 }

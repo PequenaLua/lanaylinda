@@ -9,22 +9,24 @@ namespace Ex07
     class Historico
     {
         private string aluno;
-        private Disciplina[] discs = new Disciplina[30];
+        private Disciplina[] discs = new Disciplina[10];
         private int m;
         public void SetNome(string a) {aluno = a;}
         public void Inserir(Disciplina d)
         {
-            if(m < 30)
-            {
+            if(m < 10) { 
                discs[m] = d;
                 m++;
             }
         }
-        public Disciplina[] Listar()
+        public void Apagar(int sel)
         {
-            Disciplina[] vetor = new Disciplina[m];
-            Array.Copy(discs, vetor, m);
-            return vetor;
+            for(int l = sel + 1; l < m; l++)
+            {
+                discs[l - 1] = discs[l]; 
+            }
+            discs[m] = null;
+            m--;
         }
         public double CalcularIRA()
         {
@@ -33,7 +35,7 @@ namespace Ex07
             {
                 ira += discs[k].GetMedia();
             }
-            ira /= m;
+            ira = ira / m;
             return ira;
         }
     }
