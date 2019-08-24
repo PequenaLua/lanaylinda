@@ -31,13 +31,17 @@ namespace Ex06
             b = new Bingo();
             b.Iniciar(int.Parse(txtNumeroDeBolas.Text));
             txtSorteados.Text = "";
+            btnSort.IsEnabled = true;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int n = b.Proximo();
-            txtSort.Text = n.ToString();
-            txtSorteados.Text += n.ToString() + " ";
+            if (n != -1)
+            {
+                txtSort.Text = n.ToString();
+                txtSorteados.Text += n.ToString() + " ";
+            }
         }
 
         private void Slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)

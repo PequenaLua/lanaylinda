@@ -28,7 +28,7 @@
                 <Button Content="Iniciar" Grid.Column="2" Margin="7,7" Click="btnIniciar"/>
             </Grid>
         </GroupBox>
-        <Button Content="Sortear" Grid.Row="1" Margin="5" Click="Button_Click"/>
+        <Button IsEnabled="False" x:Name="btnSort" Content="Sortear" Grid.Row="1" Margin="5" Click="Button_Click"/>
         <TextBox x:Name="txtSort" Text="35" Grid.Column="1" Grid.Row="1" FontSize="60" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5"/>
         <GroupBox Header="Sorteados" Grid.Row="2" Grid.ColumnSpan="2" Margin="5">
             <TextBox x:Name="txtSorteados" TextWrapping="Wrap" BorderBrush="Transparent"/>
