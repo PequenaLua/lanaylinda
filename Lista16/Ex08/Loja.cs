@@ -8,14 +8,15 @@ namespace Ex08
 {
     class Loja
     {
+        private string nome;
         private Veiculo[] vcls = new Veiculo[15];
         private int n;
+        public void SetNome(string nome) { this.nome = nome; }
         public void Inserir(Veiculo v)
         {
             if(n < 15)
             {
-                vcls[n] = v;
-                n++;
+                vcls[n++] = v;
             }
         }
         public Veiculo[] Listar()
@@ -73,9 +74,9 @@ namespace Ex08
         public override string ToString()
         {
             if(vendido == true)
-            return ($"{placa} | {fabricante} | {modelo} | {ano} | R$ {preco} - Vendido");
+            return ($"{placa} | {fabricante} | {modelo} | {ano} | R$ {preco} | Vendido");
             else
-            return ($"{placa} | {fabricante} | {modelo} | {ano} | R$ {preco} - Não vendido");
+            return ($"{placa} | {fabricante} | {modelo} | {ano} | R$ {preco} | Não vendido");
         }
     }
 }

@@ -51,30 +51,34 @@ namespace Ex08
         }
         private void btnListarTodos(object sender, RoutedEventArgs e)
         {
-            list.Items.Clear();
             Veiculo[] y = l.Listar();
-            foreach (Veiculo h in y)
-            {
-                list.Items.Add(h.ToString()); 
-            }
+            list.ItemsSource = y;
         }
         private void btnListarValor(object sender, RoutedEventArgs e)
         {
-            list.Items.Clear();
             if (txtValorMaximo.Text != null) { 
-            Veiculo[] g = l.ListarValor(decimal.Parse(txtValorMaximo.Text));
-            foreach(Veiculo i in g)
-            {
-                list.Items.Add(i.ToString());
-            }
+                Veiculo[] g = l.ListarValor(decimal.Parse(txtValorMaximo.Text));
+                list.ItemsSource = g;
             }
         }
 
         private void btnVender(object sender, RoutedEventArgs e)
         {
-            Veiculo d = new Veiculo();
             Veiculo[] f = l.Listar();
-            int u = f.IndexOf(list.SelectedItem);
+            int u = Array.IndexOf(f, list.SelectedItem);
+            if (f[u].GetVendido() == false)
+            {
+                f[u].Vender();
+                f = l.Listar();
+                list.ItemsSource = f;
+            }
+            else MessageBox.Show("O veículo já está vendido");
+        }
+
+        private void btnConfirmarNome(object sender, RoutedEventArgs e)
+        {
+            l.SetNome(txtNomeLoja.Text);
+            main.Title = txtNomeLoja.Text; 
         }
     }
 }
