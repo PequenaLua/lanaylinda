@@ -8,7 +8,6 @@ namespace Ex08
 {
     class Loja
     {
-        private string nome;
         private Veiculo[] vcls = new Veiculo[15];
         private int n;
         public void Inserir(Veiculo v)
@@ -16,10 +15,12 @@ namespace Ex08
             if(n < 15)
             {
                 vcls[n] = v;
+                n++;
             }
         }
         public Veiculo[] Listar()
         {
+            //aux = n;
             Veiculo[] vet = new Veiculo[n];
             Array.Copy(vcls, vet, n);
             return vet;
@@ -30,7 +31,7 @@ namespace Ex08
             Veiculo[] vet1 = new Veiculo[15];
             for(int i = 0; i < n; i++)
             {
-                if(vcls[i].GetVendido() == false || vcls[i].GetPreco() <= precoMax)
+                if(vcls[i].GetVendido() == false && vcls[i].GetPreco() <= precoMax)
                 {
                     vet1[g] = vcls[i];
                     g++;
@@ -70,5 +71,12 @@ namespace Ex08
         public void Vender() {vendido = true;}
         public bool GetVendido(){return vendido;}
         public decimal GetPreco() { return preco; }
+        public override string ToString()
+        {
+            if(vendido == true)
+            return ($"{placa} - {fabricante} - {modelo} - {ano} - {preco} - Vendido");
+            else
+            return ($"{placa} - {fabricante} - {modelo} - {ano} - {preco} - Não vendido");
+        }
     }
 }

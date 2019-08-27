@@ -25,7 +25,7 @@ namespace Ex08
             InitializeComponent();
         }
         Loja l = new Loja();
-
+        //int f;
         private void btnInserir(object sender, RoutedEventArgs e)
         {
             Veiculo x = new Veiculo();
@@ -39,11 +39,37 @@ namespace Ex08
             else ver = false;
             x.SetVendido(ver);
             l.Inserir(x);
+            //txtPlaca.Clear();
+            //txtFabricante.Clear();
+            //txtModelo.Clear();
+            //txtAno.Clear();
+            //txtPreco.Clear();
         }
 
-        private void btnVender(object sender, RoutedEventArgs e)
+        private void btnTotal(object sender, RoutedEventArgs e)
         {
+          MessageBox.Show($"R$ {l.Total().ToString()}");
+        }
 
+        private void btnListarTodos(object sender, RoutedEventArgs e)
+        {
+            list.Items.Clear();
+            Veiculo[] y = l.Listar();
+            foreach (Veiculo h in y)
+            {
+                list.Items.Add(h.ToString()); 
+            }
+        }
+        private void btnListarValor(object sender, RoutedEventArgs e)
+        {
+            list.Items.Clear();
+            if (txtValorMaximo.Text != null) { 
+            Veiculo[] g = l.ListarValor(decimal.Parse(txtValorMaximo.Text));
+            foreach(Veiculo i in g)
+            {
+                list.Items.Add(i.ToString());
+            }
+            }
         }
     }
 }
