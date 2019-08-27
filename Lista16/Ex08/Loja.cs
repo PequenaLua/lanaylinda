@@ -20,7 +20,6 @@ namespace Ex08
         }
         public Veiculo[] Listar()
         {
-            //aux = n;
             Veiculo[] vet = new Veiculo[n];
             Array.Copy(vcls, vet, n);
             return vet;
@@ -74,9 +73,9 @@ namespace Ex08
         public override string ToString()
         {
             if(vendido == true)
-            return ($"{placa} - {fabricante} - {modelo} - {ano} - {preco} - Vendido");
+            return ($"{placa} | {fabricante} | {modelo} | {ano} | R$ {preco} - Vendido");
             else
-            return ($"{placa} - {fabricante} - {modelo} - {ano} - {preco} - Não vendido");
+            return ($"{placa} | {fabricante} | {modelo} | {ano} | R$ {preco} - Não vendido");
         }
     }
 }
