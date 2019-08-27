@@ -20,9 +20,10 @@
             <ColumnDefinition Width="158*"/>
             <ColumnDefinition Width="238*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Loja" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,10,0,10" FontSize="16"/>
-        <TextBox x:Name="txtNomeLoja" Width="330" Padding="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="60,6,0,6" FontSize="16"/>
-        <Button Content="Confirmar" Grid.Column="2" Margin="5" Click="btnConfirmarNome"/>
+       
+        <TextBlock Text="Loja" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="16"/>
+        <TextBox x:Name="txtNomeLoja" Width="310" Padding="3" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="60,6,0,6" FontSize="16"/>
+        <Button Content="Confirmar" Grid.Column="2" Margin="8" Click="btnConfirmarNome"/>
         <GroupBox Header="Veículo" Grid.ColumnSpan="3" Grid.Row="1" Margin="5" FontSize="15">
             <Grid>
                 <Grid.RowDefinitions>
