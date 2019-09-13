@@ -9,13 +9,12 @@ namespace Ex07
     class Historico
     {
         private string aluno;
-        private Disciplina[] discs = new Disciplina[30];
+        private Disciplina[] discs = new Disciplina[15];
         private int m;
         public void SetNome(string a) {aluno = a;}
         public void Inserir(Disciplina d)
         {
-            if(m < 30)
-            {
+            if(m < 15) { 
                discs[m] = d;
                 m++;
             }
@@ -26,6 +25,15 @@ namespace Ex07
             Array.Copy(discs, vetor, m);
             return vetor;
         }
+        public void Apagar(int sel)
+        {
+            for(int l = sel + 1; l < m; l++)
+            {
+                discs[l - 1] = discs[l]; 
+            }
+            discs[m] = null;
+            m--;
+        }
         public double CalcularIRA()
         {
             double ira = 0;
@@ -33,20 +41,22 @@ namespace Ex07
             {
                 ira += discs[k].GetMedia();
             }
-            ira /= m;
+            ira = ira / m;
             return ira;
         }
     }
     class Disciplina
     {
-        private string nome;
-        private string semestre;
+        private string nome, semestre;
         private double media;
         private bool aprovado;
-        public void SetNome(string n) { nome = n; }
-        public void SetSemestre(string s) { semestre = s; }
-        public void SetMedia(double m) { media = m; }
-        public void SetAprovado(bool a) { aprovado = a; }
+        public Disciplina(string nome, string semestre, double media, bool aprovado)
+        {
+            this.nome = nome;
+            this.semestre = semestre;
+            this.media = media;
+            this.aprovado = aprovado;
+        }
         public double GetMedia()
         {
             return media;
