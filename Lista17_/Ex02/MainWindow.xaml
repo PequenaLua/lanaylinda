@@ -5,8 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ex02"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="300" Width="450">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Fibonacci" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Button Content="Iniciar" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Padding="6"/>
+                <Button Content="Próximo" Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Padding="6"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="PA" Margin="5" Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Primeiro Elemento" Grid.ColumnSpan="2" Margin="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBlock Text="Razão" Grid.Row="1" Grid.ColumnSpan="2" Margin="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox x:Name="pE" Grid.ColumnSpan="2" Margin="2,20,0,0" VerticalAlignment="Top" Width="100" Padding="2" HorizontalAlignment="Left"/>
+                <TextBox x:Name="razao" Grid.Row="1" Grid.ColumnSpan="2" Margin="2,20,0,0" VerticalAlignment="Top" Width="100" Padding="2" HorizontalAlignment="Left"/>
+                <Button Content="Iniciar" Grid.Row="2" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="90" Padding="6" Click="IniciarPA"/>
+                <Button Content="Próximo" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="90" Padding="6" Click="ProximoPA"/>
+            </Grid>
+        </GroupBox>
+        <ListView x:Name="lista" Grid.Column="1" Margin="7" Grid.RowSpan="2"/>
     </Grid>
 </Window>

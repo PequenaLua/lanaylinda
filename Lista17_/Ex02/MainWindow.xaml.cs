@@ -24,5 +24,17 @@ namespace Ex02
         {
             InitializeComponent();
         }
+
+        private void IniciarPA(object sender, RoutedEventArgs e)
+        {
+            lista.Items.Clear();
+            PA p = new PA(int.Parse(pE.Text), int.Parse(razao.Text));
+        }
+        Sequencia x = p as Sequencia;
+        x.Iniciar();
+        private void ProximoPA(object sender, RoutedEventArgs e)
+        {
+            x.In
+        }
     }
 }
