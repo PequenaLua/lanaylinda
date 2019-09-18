@@ -21,8 +21,8 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Button Content="Iniciar" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Padding="6"/>
-                <Button Content="Próximo" Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Padding="6"/>
+                <Button Content="Iniciar" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Padding="6" Click="FibIniciar"/>
+                <Button Content="Próximo" Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150" Padding="6" Click="FibProximo"/>
             </Grid>
         </GroupBox>
         <GroupBox Header="PA" Margin="5" Grid.Row="1">

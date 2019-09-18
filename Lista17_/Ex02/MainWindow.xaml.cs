@@ -24,17 +24,33 @@ namespace Ex02
         {
             InitializeComponent();
         }
-
+        Sequencia x;
         private void IniciarPA(object sender, RoutedEventArgs e)
         {
             lista.Items.Clear();
             PA p = new PA(int.Parse(pE.Text), int.Parse(razao.Text));
+            x = p as Sequencia;
+            x.Iniciar();
         }
-        Sequencia x = p as Sequencia;
-        x.Iniciar();
+
         private void ProximoPA(object sender, RoutedEventArgs e)
         {
-            x.In
+            int l = x.Proximo();
+            lista.Items.Add(l);
+        }
+
+        private void FibIniciar(object sender, RoutedEventArgs e)
+        {
+            lista.Items.Clear();
+            Fibonacci f = new Fibonacci();
+            x = f as Sequencia;
+            x.Iniciar();
+        }
+
+        private void FibProximo(object sender, RoutedEventArgs e)
+        {
+            int i = x.Proximo();
+            lista.Items.Add(i);
         }
     }
 }
