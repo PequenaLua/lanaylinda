@@ -1,0 +1,50 @@
+﻿<Window x:Class="Ex03.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex03"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Bingo" Margin="5" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Num. de Bolas" Margin="5,10"/>
+                <TextBox x:Name="txtNumeroDeBolas" Text="10" Grid.Row="1" VerticalAlignment="Center" Padding="3" Margin="5,5"/>
+                <Button Content="Sortear" Grid.Column="1" Margin="5,5" Click="SortearIniciar"/>
+                <Button Content="Sorteados" Grid.Row="1" Grid.Column="1" Margin="5,5"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Mega" Margin="5" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Sortear" Margin="5,5"/>
+                <Button Content="Sorteados" Grid.Column="1" Margin="5,5"/>
+            </Grid>
+        </GroupBox>
+        <TextBox x:Name="txtSort" Text="35" Grid.Column="1" Grid.Row="1" FontSize="60" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="5"/>
+        <GroupBox Header="Sorteados" Grid.Row="2" Grid.ColumnSpan="2" Margin="5">
+            <TextBox x:Name="txtSorteados" TextWrapping="Wrap" BorderBrush="Transparent"/>
+        </GroupBox>
+    </Grid>
+</Window>
