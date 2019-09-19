@@ -1,0 +1,36 @@
+﻿<Window x:Class="Ex04.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex04"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="País" Margin="5" Grid.Column="1">
+            <Grid>
+            <TextBlock Text="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,5,0,0"/>
+            <TextBlock Text="Número de Medalhas" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,35,0,0"/>
+            <TextBlock Text="Ouro" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,60,0,0"/>
+            <TextBlock Text="Prata" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,90,0,0"/>
+            <TextBlock Text="Bronze" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5,120,0,0"/>
+            <TextBox x:Name="txtNome" VerticalAlignment="Top" HorizontalAlignment="Left" Width="130" Padding="3" Margin="50,2,0,0"/>
+            <TextBox x:Name="ouro" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Padding="3" Margin="50,57,0,0"/>
+            <TextBox x:Name="prata" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Padding="3" Margin="50,87,0,0"/>
+            <TextBox x:Name="bronze" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" Padding="3" Margin="50,117,0,0"/>
+                <Button Content="Adicionar" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Height="30" Margin="0,0,15,15" Click="AdicionarPais"/>
+            </Grid>
+        </GroupBox>
+        <Button Content="Listar países" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="2" Width="130" Height="30" Margin="0,0,0,20" Click="ListarPaises"/>
+        <ListView x:Name="lista" Grid.Row="1" Grid.ColumnSpan="3" Margin="5"/>
+    </Grid>
+</Window>
