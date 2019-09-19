@@ -25,14 +25,13 @@ namespace Ex03
                     k++;
                 }
             }
-            i = -1;
+            i = 0;
         }
         public int Sortear()
         {
             if (i < numBolas)
             {
-                i++;
-                return sorteados[i];
+                return sorteados[i++];
             }
             else return 0;
         }

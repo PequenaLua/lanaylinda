@@ -25,12 +25,34 @@ namespace Ex03
             InitializeComponent();
         }
         ISorteio s;
-        private void SortearIniciar(object sender, RoutedEventArgs e)
+
+        private void BeginBingo(object sender, RoutedEventArgs e)
         {
-            txtSorteados.Clear();
             Bingo b = new Bingo(int.Parse(txtNumeroDeBolas.Text));
             s = b as ISorteio;
+            txtSorteados.Text = "";
+        }
 
+        private void Sortear(object sender, RoutedEventArgs e)
+        {
+            txtSort.Text = s.Sortear().ToString();
+        }
+
+        private void Sorteados(object sender, RoutedEventArgs e)
+        {
+            txtSorteados.Text = "";
+            int[] v = s.Sorteados();
+            foreach(int i in v){
+                txtSorteados.Text += i.ToString();
+                txtSorteados.Text += " ";
+            }
+        }
+
+        private void BeginMega(object sender, RoutedEventArgs e)
+        {
+            Mega m = new Mega();
+            s = m as ISorteio;
+            txtSorteados.Text = "";
         }
     }
 }
