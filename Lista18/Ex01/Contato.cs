@@ -36,7 +36,7 @@ namespace Ex01
         }
         public override string ToString()
         {
-            return $"{nome} - {email} - {nascimento.Day}/{nascimento.Month}/{nascimento.Year} - {Idade}";
+            return $"{nome} - {email} - {nascimento:dd/MM/yyyy} - {Idade}";
         }
     }
 }

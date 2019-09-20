@@ -24,5 +24,14 @@ namespace Ex01
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Contato c = new Contato();
+            c.Nome = nome.Text;
+            c.Email = email.Text;
+            c.Nascimento = DateTime.Parse(data.Text);
+            lista.Items.Add(c.ToString());
+        }
     }
 }
