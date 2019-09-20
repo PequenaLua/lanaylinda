@@ -17,10 +17,6 @@ namespace Ex04
             this.prata = prata;
             this.bronze = bronze;
         }
-        public int GetOuro() { return ouro; }
-        public int GetPrata() { return prata; }
-        public int GetBronze() { return bronze; }
-        public string GetNome() { return nome; }
         public override string ToString()
         {
             return $"{nome} - Ouro: {ouro} - Prata: {prata} - Bronze: {bronze}";
