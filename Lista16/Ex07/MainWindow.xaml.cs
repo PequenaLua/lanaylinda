@@ -38,25 +38,17 @@ namespace Ex07
 
         private void btnInserir(object sender, RoutedEventArgs e)
         {
-            Disciplina x = new Disciplina();
-            x.SetNome(txtDisciplina.Text);
-            x.SetSemestre(txtSemestre.Text);
-            x.SetMedia(double.Parse(txtMedia.Text));
-            bool ok;
-            if (chAp.IsChecked == true) ok = true;
-            else ok = false;
-            x.SetAprovado(ok);
-            h.Inserir(x);
-            list.Items.Add(x.ToString());
+            bool apvd = (double.Parse(txtMedia.Text) >= 60 ? true : false);
+            h.Inserir(new Disciplina(txtNome.Text, txtSemestre.Text, double.Parse(txtMedia.Text), apvd));
+            list.ItemsSource = h.Listar();
             txtDisciplina.Clear();
             txtSemestre.Clear();
             txtMedia.Clear();
         }
         private void btnExcluir(object sender, RoutedEventArgs e)
         {
-            int s = list.SelectedIndex;
-            list.Items.Remove(list.SelectedItem);
-            h.Apagar(s);
+            h.Apagar(list.SelectedIndex);
+            list.ItemsSource = h.Listar();
         }
 
         private void btnIRA(object sender, RoutedEventArgs e)
