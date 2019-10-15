@@ -1,0 +1,64 @@
+﻿<Window x:Class="Ex08___WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ex08___WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Produtos a vencer"  Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Dias" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" Margin="10,0,0,0"/>
+                <TextBox x:Name="dias" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Padding="6" Margin="10,0,0,0"/>
+                <Button Content="Buscar" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Padding="6" Margin="10,0,0,0" Click="Button_Click_4"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Procurar por estoque"  Grid.Column="1" Margin="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="Quantidade de prudutos" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" Margin="10,0,0,0"/>
+                <TextBox x:Name="valor" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Padding="6" Margin="10,0,0,0"/>
+                <Button Content="Buscar" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Padding="6" Margin="10,0,0,0" Click="Button_Click_5"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Column="2" Grid.RowSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Button Content="Listar por Descrição" Width="150" Height="35" Click="ListarDescricaoClick"/>
+                <Button Content="Listar por Preço" Grid.Row="1" Width="150" Height="35" Click="Button_Click"/>
+                <Button Content="Vencidos" Grid.Row="2" Width="150" Height="35"/>
+                <Button Content="Total (R$)" Grid.Row="3" Width="150" Height="35"/>
+            </Grid>
+        </GroupBox>
+        <ListBox x:Name="lista" Grid.Row="1" Grid.ColumnSpan="2" Margin="7"/>
+       
+        <Button Content="Inserir" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,10,0" Width="120" Height="35"/>
+        <Button Content="Excluir" Grid.Row="2" Grid.Column="1" Width="120" HorizontalAlignment="Right" Margin="0,0,140,0" Height="35"/>
+            
+    </Grid>
+</Window>
