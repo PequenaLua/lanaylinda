@@ -1,0 +1,28 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ex05
+{
+    class Curso
+    {
+        private string descricao;
+        private List<Turma> turmas = new List<Turma>();
+        public Curso(string d)
+        {
+            descricao = d;
+        }
+        public void AdicionarTurma(Turma t)
+        {
+            turmas.Add(t);
+        }
+        public Turma[] ListarTurmas()
+        {
+            Turma[] novo = turmas.ToArray();
+            Array.Sort(novo);
+            return novo;
+        }
+    }
+}
