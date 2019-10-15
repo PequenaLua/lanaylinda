@@ -35,5 +35,30 @@ namespace Ex08___WPF
         {
             lista.ItemsSource = es.ListarPreco();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            lista.ItemsSource = es.Vencidos();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            lista.ItemsSource = es.AVencer(int.Parse(dias.Text));
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            lista.ItemsSource = es.EstoqueBaixo(int.Parse(qtd.Text));
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(es.Total().ToString(), "Total em R$");
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            es.Excluir(lista.SelectedItem as Produto);
+        }
     }
 }

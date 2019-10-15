@@ -37,7 +37,7 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Text="Quantidade de prudutos" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15" Margin="10,0,0,0"/>
-                <TextBox x:Name="valor" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Padding="6" Margin="10,0,0,0"/>
+                <TextBox x:Name="qtd" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Width="200" Padding="6" Margin="10,0,0,0"/>
                 <Button Content="Buscar" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Padding="6" Margin="10,0,0,0" Click="Button_Click_5"/>
             </Grid>
         </GroupBox>
@@ -51,14 +51,14 @@
                 </Grid.RowDefinitions>
                 <Button Content="Listar por Descrição" Width="150" Height="35" Click="ListarDescricaoClick"/>
                 <Button Content="Listar por Preço" Grid.Row="1" Width="150" Height="35" Click="Button_Click"/>
-                <Button Content="Vencidos" Grid.Row="2" Width="150" Height="35"/>
-                <Button Content="Total (R$)" Grid.Row="3" Width="150" Height="35"/>
+                <Button Content="Vencidos" Grid.Row="2" Width="150" Height="35" Click="Button_Click_1"/>
+                <Button Content="Total (R$)" Grid.Row="3" Width="150" Height="35" Click="Button_Click_2"/>
             </Grid>
         </GroupBox>
         <ListBox x:Name="lista" Grid.Row="1" Grid.ColumnSpan="2" Margin="7"/>
        
         <Button Content="Inserir" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,10,0" Width="120" Height="35"/>
-        <Button Content="Excluir" Grid.Row="2" Grid.Column="1" Width="120" HorizontalAlignment="Right" Margin="0,0,140,0" Height="35"/>
+        <Button Content="Excluir" Grid.Row="2" Grid.Column="1" Width="120" HorizontalAlignment="Right" Margin="0,0,140,0" Height="35" Click="Button_Click_3"/>
             
     </Grid>
 </Window>
