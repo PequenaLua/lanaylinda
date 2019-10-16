@@ -10,8 +10,6 @@ namespace Ex03
     {
         static void Main(string[] args)
         {
-            Pilha2<int> p = new Pilha2<int>();
-
         }
     }
 }
