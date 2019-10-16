@@ -27,9 +27,13 @@ namespace Ex07___WPF
         private void OpenVeiculoWindow(object sender, RoutedEventArgs e)
         {
             VeiculoWindow j2 = new VeiculoWindow();
-            j2.Show();
+            if (j2.ShowDialog().Value)
+            {
+                l.Inserir(j2.GetVeiculo());
+            }
         }
         Loja l;
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             l = new Loja(nomeLoja.Text);
@@ -63,6 +67,11 @@ namespace Ex07___WPF
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             l.Excluir(lista.SelectedItem as Veiculo);
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            (lista.SelectedItem as Veiculo).Vender();
         }
     }
 }

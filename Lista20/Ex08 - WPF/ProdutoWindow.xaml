@@ -24,7 +24,9 @@
         <TextBox x:Name="txtPreco" Width="200" Padding="5" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,30,0,0"/>
         <TextBox x:Name="txtValidade" Width="200" Padding="5" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,30,0,0"/>
         <TextBox x:Name="txtQtd" Width="200" Padding="5" Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,30,0,0"/>
-        
-        <Button Content="Confirmar" Grid.Column="2" Grid.Row="2" Width="100" Height="28" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+        <StackPanel Grid.Column="2" Grid.Row="2" VerticalAlignment="Center">
+            <Button Content="Confirmar" Width="100" Height="28" Click="Button_Click" Margin="0,5"/>
+            <Button Content="Cancelar" Width="100" Height="28" Click="Cancel_Click"/>
+        </StackPanel>
     </Grid>
 </Window>

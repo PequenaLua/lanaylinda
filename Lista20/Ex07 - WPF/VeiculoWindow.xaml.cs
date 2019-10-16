@@ -23,11 +23,23 @@ namespace Ex07___WPF
         {
             InitializeComponent();
         }
+        Veiculo vc;
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Veiculo x = new Veiculo(txtPlaca.Text, txtFabricante.Text, txtModelo.Text, int.Parse(txtAno.Text), decimal.Parse(txtPreco.Text));
-            Loja lo = base.
+            DialogResult = true;
         }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+        }
+
+        internal Veiculo GetVeiculo()
+        {
+            vc = new Veiculo(txtPlaca.Text, txtFabricante.Text, txtModelo.Text, int.Parse(txtAno.Text), decimal.Parse(txtPreco.Text));
+            return vc;
+        }
+
     }
 }
