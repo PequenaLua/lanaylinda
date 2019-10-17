@@ -51,7 +51,7 @@ namespace Ex07___WPF
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(l.Total().ToString(), "Total");
+            lista.ItemsSource = l.Listar();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)

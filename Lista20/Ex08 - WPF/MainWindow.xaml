@@ -57,7 +57,7 @@
         </GroupBox>
         <ListBox x:Name="lista" Grid.Row="1" Grid.ColumnSpan="2" Margin="7"/>
        
-        <Button Content="Inserir" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,10,0" Width="120" Height="35"/>
+        <Button Content="Inserir" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,10,0" Width="120" Height="35" Click="Button_Click_6"/>
         <Button Content="Excluir" Grid.Row="2" Grid.Column="1" Width="120" HorizontalAlignment="Right" Margin="0,0,140,0" Height="35" Click="Button_Click_3"/>
             
     </Grid>

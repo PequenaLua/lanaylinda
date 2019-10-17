@@ -33,5 +33,10 @@ namespace Ex08___WPF
         {
             DialogResult = false;
         }
+        internal Produto GetProduto()
+        {
+            Produto p = new Produto(txtDesc.Text, decimal.Parse(txtPreco.Text), int.Parse(txtQtd.Text), DateTime.Parse(txtValidade.Text));
+            return p;
+        }
     }
 }

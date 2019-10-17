@@ -60,5 +60,14 @@ namespace Ex08___WPF
         {
             es.Excluir(lista.SelectedItem as Produto);
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            ProdutoWindow j2 = new ProdutoWindow();
+            if (j2.ShowDialog().Value)
+            {
+                es.Inserir(j2.GetProduto());
+            }
+        }
     }
 }

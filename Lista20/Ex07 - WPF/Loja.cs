@@ -19,6 +19,11 @@ namespace Ex07___WPF
         {
             veiculos.Remove(v);
         }
+        public Veiculo[] Listar()
+        {
+            Veiculo[] novo = veiculos.ToArray();
+            return novo;
+        }
         public Veiculo[] ListarPorFabricante()
         {
             Veiculo[] v = veiculos.OrderBy(Veiculo => Veiculo.Fabricante).ThenBy(Veiculo => Veiculo.Modelo).ToArray();
