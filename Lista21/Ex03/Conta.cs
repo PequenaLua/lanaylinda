@@ -26,5 +26,9 @@ namespace Ex03
             else return true;
         }
         public decimal VerificarSaldo()
+        {
+            return saldo;
+        }
+
     }
 }
