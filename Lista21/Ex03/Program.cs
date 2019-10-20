@@ -14,7 +14,8 @@ namespace Ex03
             Cliente c = new Cliente("Paulo", "paulo@email.com", "988989587");
             Conta ct = new Conta("31465", 15000);
             c.Inserir(ct);
-            ct.Sacar(15500);
+            ct.Sacar(1400);
+            ct.Depositar(-1000);
             Console.ReadKey();
             }
             catch(InversaoSaldoException erro)
@@ -25,6 +26,7 @@ namespace Ex03
             catch(ArgumentOutOfRangeException erro)
             {
                 Console.WriteLine(erro.Message);
+                Console.ReadKey();
             }
         }
     }
