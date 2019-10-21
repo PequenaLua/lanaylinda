@@ -18,12 +18,29 @@ namespace Ex04
         {
             foreach (Jogador i in jogs) if (j.Email == i.Email) throw new EmailExistenteException("Email inválido");
             jogs.Add(j);
-            jogs.Sort();
         }
         public List<Jogador> Listar()
         {
+            jogs.Sort();
             return jogs;
         }
-        
+        public Jogador Top1()
+        {
+            return jogs[0];
+        }
+        public List<Jogador> Top10()
+        {
+            jogs.Sort();
+            List<Jogador> novo = new List<Jogador>();
+            for(int i = 0; i < 10; i++)
+            {
+                novo.Add(jogs[i]);
+            }
+            return novo;
+        }
+        public override string ToString()
+        {
+            return $"{nome} - {jogs.Count} jogadores";
+        }
     }
 }
