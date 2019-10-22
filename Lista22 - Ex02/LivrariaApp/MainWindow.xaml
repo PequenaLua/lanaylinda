@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LivrariaApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="200" Width="400">
     <Grid>
-        
+        <Menu VerticalAlignment="Top" FontSize="15" Background="#FFB0A8A8">
+            <MenuItem Header="Cadastro">
+                <MenuItem Header="Livro"/>
+                <MenuItem Header="Autor"/>
+            </MenuItem>
+            <MenuItem Header="Acervo">
+                <MenuItem Header="Livros"/>
+                <MenuItem Header="Autores"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

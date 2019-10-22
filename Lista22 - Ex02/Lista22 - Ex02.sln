@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistenciaLivro", "Persis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NegocioAutor", "NegocioAutor\NegocioAutor.csproj", "{82A7C88A-F713-4875-8EA2-1EE46D0D5707}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NegocioLivro", "NegocioLivro\NegocioLivro.csproj", "{51B08B02-F8F3-4D19-92AE-6D4BBA490AA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{82A7C88A-F713-4875-8EA2-1EE46D0D5707}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82A7C88A-F713-4875-8EA2-1EE46D0D5707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82A7C88A-F713-4875-8EA2-1EE46D0D5707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B08B02-F8F3-4D19-92AE-6D4BBA490AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B08B02-F8F3-4D19-92AE-6D4BBA490AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B08B02-F8F3-4D19-92AE-6D4BBA490AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B08B02-F8F3-4D19-92AE-6D4BBA490AA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

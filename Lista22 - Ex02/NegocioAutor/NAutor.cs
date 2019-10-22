@@ -39,14 +39,7 @@ namespace NegocioAutor
         public void Delete(Autor a)
         {
             List<Autor> la = p.Open();
-            for (int i = 0; i < la.Count; i++)
-            {
-                if (a.Id == la[i].Id)
-                {
-                    la.RemoveAt(i);
-                    break;
-                }
-            }
+            la.Remove(a);
             p.Save(la);
         }
     }
