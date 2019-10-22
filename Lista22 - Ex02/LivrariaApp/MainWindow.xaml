@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="200" Width="400">
     <Grid>
-        <Menu VerticalAlignment="Top" FontSize="15" Background="#FFB0A8A8">
+        <Menu VerticalAlignment="Top" FontSize="15" Background="#FFDCD6D6">
             <MenuItem Header="Cadastro">
                 <MenuItem Header="Livro"/>
                 <MenuItem Header="Autor"/>
