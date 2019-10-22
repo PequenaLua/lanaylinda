@@ -5,38 +5,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using ModeloAutor;
+using ModeloLivro;
 
-namespace PersistenciaAutor
+namespace PersistenciaLivro
 {
-    public class PAutor
+    public class PLivro
     {
         private string arquivo = "arquivo.xml";
-        public List<Autor> Open()
+        public List<Livro> Open()
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<Autor>));
+            XmlSerializer x = new XmlSerializer(typeof(List<Livro>));
             StreamReader f = null;
-            List<Autor> l = null;
+            List<Livro> a = null;
             try
             {
                 f = new StreamReader(arquivo, Encoding.Default);
-                l = x.Deserialize(f) as List<Autor>;
+                a = x.Deserialize(f) as List<Livro>;
             }
             catch
             {
-                l = new List<Autor>();
+                a = new List<Livro>();
             }
             finally
             {
                 if (f != null) f.Close();
             }
-            return l;
+            return a;
         }
-        public void Save(List<Autor> l)
+        public void Save(List<Livro> a)
         {
-            XmlSerializer x = new XmlSerializer(typeof(List<Autor>));
+            XmlSerializer x = new XmlSerializer(typeof(List<Livro>));
             StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
-            x.Serialize(f, l);
+            x.Serialize(f, a);
             f.Close();
         }
     }
