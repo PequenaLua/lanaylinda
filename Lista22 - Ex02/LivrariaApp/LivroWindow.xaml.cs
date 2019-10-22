@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ModeloLivro;
+using NegocioLivro;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,26 @@ namespace LivrariaApp
         public LivroWindow()
         {
             InitializeComponent();
+        }
+
+        private void InsertClick(object sender, RoutedEventArgs e)
+        {
+            Livro l = new Livro();
+            l.IdAutor = int.Parse(txtIdAutor.Text);
+            l.Sinopse = txtSinopse.Text;
+            l.Genero = txtGenero.Text;
+            l.Titulo = txtTitulo.Text;
+            NLivro n = new NLivro();
+            n.Insert(l);
+            txtIdAutor.Clear();
+            txtSinopse.Clear();
+            txtGenero.Clear();
+            txtTitulo.Clear();
+        }
+
+        private void CancelClick(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

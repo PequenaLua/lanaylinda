@@ -5,22 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LivrariaApp"
         mc:Ignorable="d"
-        Title="AutorWindow" Height="200" Width="600">
+        Title="AutorWindow" Height="400" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
+            <RowDefinition Height="1.5*"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Text="Id" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
-        <TextBlock Text="Título" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Margin="10,10,0,0" FontSize="14"/>
-        <TextBlock Text="Sinopse" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
-        <TextBox x:Name="txtId" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <TextBox x:Name="txtTitulo" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <TextBox x:Name="txtSinopse" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <Button Content="Inserir" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
+        <TextBlock Text="Nome" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
+        <TextBlock Text="Biografia" VerticalAlignment="Top" HorizontalAlignment="Left"  Grid.Row="1" Margin="10,5,0,0" FontSize="14"/>
+        <TextBox x:Name="txtNome" VerticalAlignment="Top" HorizontalAlignment="Left"  Grid.Row="0" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
+        <TextBox x:Name="txtBiografia" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Row="1" Width="280" TextWrapping="Wrap" Height="125" Margin="0,25,0,0" FontSize="14"/>
+        <StackPanel  Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Confirmar" Width="200" Height="30" Margin="0,0,0,5" FontSize="14" Click="InsertClick"/>
+            <Button Content="Cancelar" Width="200" Height="30" Margin="0,0,0,0" FontSize="14" Click="CancelClick"/>
+        </StackPanel>
     </Grid>
 </Window>

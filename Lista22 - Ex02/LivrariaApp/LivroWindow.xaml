@@ -16,16 +16,17 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Id" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
-        <TextBlock Text="Título" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Margin="10,10,0,0" FontSize="14"/>
+        <TextBlock Text="Título" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
         <TextBlock Text="Sinopse" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
-        <TextBlock Text="Gênero" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Margin="10,10,0,0" FontSize="14"/>
+        <TextBlock Text="Gênero" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Margin="10,10,0,0" FontSize="14"/>
         <TextBlock Text="Id do autor" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
-        <TextBox x:Name="txtId" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <TextBox x:Name="txtTitulo" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <TextBox x:Name="txtSinopse" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <TextBox x:Name="txtGenero" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="1" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
+        <TextBox x:Name="txtTitulo" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
+        <TextBox x:Name="txtSinopse" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0" Width="240" Height="120" Margin="10,30,0,0" FontSize="14"/>
+        <TextBox x:Name="txtGenero" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
         <TextBox x:Name="txtIdAutor" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="0" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <Button Content="Inserir" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="1" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
+        <StackPanel Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left">
+            <Button Content="Confirmar" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="200" Height="30" Margin="10,0,0,5" FontSize="14" Click="InsertClick"/>
+            <Button Content="Cancelar" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="200" Height="30" Margin="10,0,0,0" FontSize="14" Click="CancelClick"/>
+        </StackPanel>
     </Grid>
 </Window>

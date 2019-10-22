@@ -19,6 +19,9 @@ namespace NegocioLivro
         public void Insert(Livro a)
         {
             List<Livro> la = p.Open();
+            int m = 0;
+            foreach (Livro i in la) if (i.Id > m) m = i.Id;
+            a.Id = m + 1;
             la.Add(a);
             p.Save(la);
         }
@@ -39,7 +42,14 @@ namespace NegocioLivro
         public void Delete(Livro a)
         {
             List<Livro> la = p.Open();
-            la.Remove(a);
+            for (int i = 0; i < la.Count; i++)
+            {
+                if (a.Id == la[i].Id)
+                {
+                    la.RemoveAt(i);
+                    break;
+                }
+            }
             p.Save(la);
         }
     }

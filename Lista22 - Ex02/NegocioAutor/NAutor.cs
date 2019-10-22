@@ -19,6 +19,9 @@ namespace NegocioAutor
         public void Insert(Autor a)
         {
             List<Autor> la = p.Open();
+            int m = 0;
+            foreach (Autor i in la) if (m < i.Id) m = i.Id;
+            a.Id = m + 1;
             la.Add(a);
             p.Save(la);
         }
@@ -39,7 +42,14 @@ namespace NegocioAutor
         public void Delete(Autor a)
         {
             List<Autor> la = p.Open();
-            la.Remove(a);
+            for (int i = 0; i < la.Count; i++)
+            {
+                if (a.Id == la[i].Id)
+                {
+                    la.RemoveAt(i);
+                    break;
+                }
+            }
             p.Save(la);
         }
     }
