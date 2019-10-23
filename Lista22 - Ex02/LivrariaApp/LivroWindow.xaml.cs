@@ -1,6 +1,4 @@
-﻿using ModeloLivro;
-using NegocioLivro;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ModeloLivro;
+using NegocioLivro;
 
 namespace LivrariaApp
 {
@@ -26,24 +26,49 @@ namespace LivrariaApp
             InitializeComponent();
         }
 
-        private void InsertClick(object sender, RoutedEventArgs e)
+        private void SelectClick(object sender, RoutedEventArgs e)
         {
-            Livro l = new Livro();
-            l.IdAutor = int.Parse(txtIdAutor.Text);
-            l.Sinopse = txtSinopse.Text;
-            l.Genero = txtGenero.Text;
-            l.Titulo = txtTitulo.Text;
             NLivro n = new NLivro();
-            n.Insert(l);
-            txtIdAutor.Clear();
-            txtSinopse.Clear();
-            txtGenero.Clear();
-            txtTitulo.Clear();
+            grid.ItemsSource = null;
+            grid.ItemsSource = n.Select();
         }
 
-        private void CancelClick(object sender, RoutedEventArgs e)
+        private void InsertClick(object sender, RoutedEventArgs e)
         {
-            Close();
+           
+            Livro l = new Livro();
+            l.Titulo = txtTitulo.Text;
+            l.Genero = txtGenero.Text;
+            l.IdAutor = int.Parse(txtIdAutor.Text);
+            l.Sinopse = txtSinopse.Text;
+            NLivro n = new NLivro();
+            n.Insert(l);
+            grid.ItemsSource = null;
+            grid.ItemsSource = n.Select();
+        }
+
+        private void UpdateClick(object sender, RoutedEventArgs e)
+        {
+            Livro outro = grid.SelectedItem as Livro;
+            Livro l = new Livro();
+            l.Id = outro.Id;
+            l.Titulo = txtTitulo.Text;
+            l.Genero = txtGenero.Text;
+            l.IdAutor = int.Parse(txtIdAutor.Text);
+            l.Sinopse = txtSinopse.Text;
+            NLivro n = new NLivro();
+            n.Update(l);
+            grid.ItemsSource = null;
+            grid.ItemsSource = n.Select();
+        }
+
+        private void DeleteClick(object sender, RoutedEventArgs e)
+        {
+            Livro l = grid.SelectedItem as Livro;
+            NLivro n = new NLivro();
+            n.Delete(l);
+            grid.ItemsSource = null;
+            grid.ItemsSource = n.Select();
         }
     }
 }

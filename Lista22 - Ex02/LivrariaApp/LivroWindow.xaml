@@ -5,28 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LivrariaApp"
         mc:Ignorable="d"
-        Title="LivroWindow" Height="200" Width="800">
+        Title="LivroWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Text="Título" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
-        <TextBlock Text="Sinopse" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
-        <TextBlock Text="Gênero" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Margin="10,10,0,0" FontSize="14"/>
-        <TextBlock Text="Id do autor" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="0" Margin="10,10,0,0" FontSize="14"/>
-        <TextBox x:Name="txtTitulo" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="0" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <TextBox x:Name="txtSinopse" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" Grid.RowSpan="2" Grid.Column="1" Grid.Row="0" Width="240" Height="120" Margin="10,30,0,0" FontSize="14"/>
-        <TextBox x:Name="txtGenero" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <TextBox x:Name="txtIdAutor" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="0" Width="200" Height="30" Margin="10,30,0,0" FontSize="14"/>
-        <StackPanel Grid.Column="2" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left">
-            <Button Content="Confirmar" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="200" Height="30" Margin="10,0,0,5" FontSize="14" Click="InsertClick"/>
-            <Button Content="Cancelar" VerticalAlignment="Top" HorizontalAlignment="Left"  Width="200" Height="30" Margin="10,0,0,0" FontSize="14" Click="CancelClick"/>
-        </StackPanel>
+        <Grid Height="90">
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Título" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="159,11,0,0" TextWrapping="Wrap" Text="Gênero" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="300,10,0,0" TextWrapping="Wrap" Text="Id do Autor" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="380,10,0,0" TextWrapping="Wrap" Text="Sinopse" VerticalAlignment="Top"/>
+            <TextBox Name="txtTitulo" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="126"/>
+            <TextBox Name="txtGenero" HorizontalAlignment="Left" Height="23" Margin="159,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="122"/>
+            <TextBox Name="txtIdAutor" HorizontalAlignment="Left" Height="23" Margin="300,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="65"/>
+            <TextBox Name="txtSinopse" HorizontalAlignment="Left" Height="50" Margin="380,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="400"/>
+            <Button Click="SelectClick" Content="Listar" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="85"/>
+            <Button Click="InsertClick" Content="Inserir" HorizontalAlignment="Left" Margin="100,60,0,0" VerticalAlignment="Top" Width="85"/>
+            <Button Click="UpdateClick" Content="Atualizar" HorizontalAlignment="Left" Margin="190,60,0,0" VerticalAlignment="Top" Width="85"/>
+            <Button Click="DeleteClick" Content="Excluir" HorizontalAlignment="Left" Margin="280,60,0,0" VerticalAlignment="Top" Width="85"/>
+        </Grid>
+        <DataGrid IsReadOnly="True" Grid.Row="1" Name="grid" SelectionChanged="grid_SelectionChanged" Margin="5"/>
     </Grid>
 </Window>

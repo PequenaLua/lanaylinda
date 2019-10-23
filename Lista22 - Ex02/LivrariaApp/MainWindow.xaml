@@ -7,15 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="200" Width="400">
     <Grid>
-        <Menu VerticalAlignment="Top" FontSize="15" Background="#FFDCD6D6">
-            <MenuItem Header="Cadastro">
-                <MenuItem Header="Livro" Click="InsertLivroClick"/>
-                <MenuItem Header="Autor" Click="InsertAutorClick"/>
-            </MenuItem>
-            <MenuItem Header="Acervo">
-                <MenuItem Header="Livros" />
-                <MenuItem Header="Autores" Click="ListarAutoresClick"/>
-            </MenuItem>
+        <Menu>
+            <MenuItem Header="Livros" Click="LivroClick" />
+            <MenuItem Header="Autores"/>
         </Menu>
     </Grid>
 </Window>
