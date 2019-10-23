@@ -11,6 +11,7 @@ namespace Ex04
     class Agenda
     {
         private List<Contato> cs = new List<Contato>();
+        private string arquivo = "arquivo.xml";
         public void Inserir(Contato c)
         {
             cs.Add(c);
@@ -29,10 +30,18 @@ namespace Ex04
             }
             return novo;
         }
-        public void Salvar(string arquivo)
+        public void Salvar()
         {
             XmlSerializer x = new XmlSerializer(typeof(List<Contato>));
-            StreamWriter f = new System.IO.StreamWriter(arquivo, false, Encoding.Default);
+            StreamWriter f = new StreamWriter(arquivo, false, Encoding.Default);
+            x.Serialize(f, cs);
+            f.Close();
+        }
+        public void Abrir()
+        {
+            XmlSerializer x = new XmlSerializer(typeof(List<Contato>));
+            StreamReader f = new StreamReader(arquivo, Encoding.Default);
+            x.Deserialize(f);
             f.Close();
         }
     }
