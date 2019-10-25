@@ -1,0 +1,26 @@
+﻿<Window x:Class="LivrariaApp.AutorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LivrariaApp"
+        mc:Ignorable="d"
+        Title="AutorWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid Height="90">
+                <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
+                <TextBlock HorizontalAlignment="Left" Margin="176,10,0,0" TextWrapping="Wrap" Text="Biografia" VerticalAlignment="Top"/>
+                <TextBox Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="155"/>
+                <TextBox Name="txtBiografia" HorizontalAlignment="Left" Height="50" Margin="176,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="400"/>
+                <Button Click="SelectClick" Content="Listar" HorizontalAlignment="Left" Margin="691,15,0,0" VerticalAlignment="Top" Width="85"/>
+                <Button Click="InsertClick" Content="Inserir" HorizontalAlignment="Left" Margin="594,45,0,0" VerticalAlignment="Top" Width="85" RenderTransformOrigin="0.482,0.5"/>
+                <Button Click="UpdateClick" Content="Atualizar" HorizontalAlignment="Left" Margin="691,45,0,0" VerticalAlignment="Top" Width="85"/>
+                <Button Click="DeleteClick" Content="Excluir" HorizontalAlignment="Left" Margin="594,15,0,0" VerticalAlignment="Top" Width="85"/>
+            </Grid>
+            <DataGrid IsReadOnly="True" Grid.Row="1" Name="grid" SelectionChanged="grid_SelectionChanged" Margin="5"/>
+        </Grid>
+</Window>

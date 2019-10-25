@@ -9,7 +9,7 @@
     <Grid>
         <Menu>
             <MenuItem Header="Livros" Click="LivroClick" />
-            <MenuItem Header="Autores"/>
+            <MenuItem Header="Autores" Click="AutorClick"/>
         </Menu>
     </Grid>
 </Window>

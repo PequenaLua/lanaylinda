@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AutorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LivroWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -66,6 +70,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AutorWindow.xaml.cs">
+      <DependentUpon>AutorWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="LivroWindow.xaml.cs">
       <DependentUpon>LivroWindow.xaml</DependentUpon>
@@ -102,9 +109,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ModeloAutor\ModeloAutor.csproj">
+      <Project>{ef77cc17-4314-4334-a82c-409b710a0c64}</Project>
+      <Name>ModeloAutor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModeloLivro\ModeloLivro.csproj">
       <Project>{c3bdc568-c3fe-4ae6-ae24-0ad5f2051297}</Project>
       <Name>ModeloLivro</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NegocioAutor\NegocioAutor.csproj">
+      <Project>{82a7c88a-f713-4875-8ea2-1ee46d0d5707}</Project>
+      <Name>NegocioAutor</Name>
     </ProjectReference>
     <ProjectReference Include="..\NegocioLivro\NegocioLivro.csproj">
       <Project>{51b08b02-f8f3-4d19-92ae-6d4bba490aa7}</Project>

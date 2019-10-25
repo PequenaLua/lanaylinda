@@ -11,17 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using ModeloLivro;
-using NegocioLivro;
+using ModeloAutor;
+using NegocioAutor;
 
 namespace LivrariaApp
 {
     /// <summary>
-    /// Lógica interna para LivroWindow.xaml
+    /// Lógica interna para AutorWindow.xaml
     /// </summary>
-    public partial class LivroWindow : Window
+    public partial class AutorWindow : Window
     {
-        public LivroWindow()
+        public AutorWindow()
         {
             InitializeComponent();
             SelectClick(null, null);
@@ -29,20 +29,18 @@ namespace LivrariaApp
 
         private void SelectClick(object sender, RoutedEventArgs e)
         {
-            NLivro n = new NLivro();
+            NAutor n = new NAutor();
             grid.ItemsSource = null;
             grid.ItemsSource = n.Select();
         }
 
         private void InsertClick(object sender, RoutedEventArgs e)
         {
-           
-            Livro l = new Livro();
-            l.Titulo = txtTitulo.Text;
-            l.Genero = txtGenero.Text;
-            l.IdAutor = int.Parse(txtIdAutor.Text);
-            l.Sinopse = txtSinopse.Text;
-            NLivro n = new NLivro();
+
+            Autor l = new Autor();
+            l.Nome = txtNome.Text;
+            l.Biografia = txtBiografia.Text;
+            NAutor n = new NAutor();
             n.Insert(l);
 
             SelectClick(sender, e);
@@ -50,15 +48,14 @@ namespace LivrariaApp
 
         private void UpdateClick(object sender, RoutedEventArgs e)
         {
-            Livro outro = grid.SelectedItem as Livro;
-            if(outro != null) { 
-                Livro l = new Livro();
+            Autor outro = grid.SelectedItem as Autor;
+            if (outro != null)
+            {
+                Autor l = new Autor();
                 l.Id = outro.Id;
-                l.Titulo = txtTitulo.Text;
-                l.Genero = txtGenero.Text;
-                l.IdAutor = int.Parse(txtIdAutor.Text);
-                l.Sinopse = txtSinopse.Text;
-                NLivro n = new NLivro();
+                l.Nome = txtNome.Text;
+                l.Biografia = txtBiografia.Text;
+                NAutor n = new NAutor();
                 n.Update(l);
                 SelectClick(sender, e);
             }
@@ -66,20 +63,19 @@ namespace LivrariaApp
 
         private void DeleteClick(object sender, RoutedEventArgs e)
         {
-            Livro l = grid.SelectedItem as Livro;
-            NLivro n = new NLivro();
+            Autor l = grid.SelectedItem as Autor;
+            NAutor n = new NAutor();
             n.Delete(l);
             SelectClick(sender, e);
         }
 
         private void grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(grid.SelectedItem != null) { 
-                Livro l = grid.SelectedItem as Livro;
-                txtGenero.Text = l.Genero;
-                txtIdAutor.Text = l.IdAutor.ToString();
-                txtSinopse.Text = l.Sinopse;
-                txtTitulo.Text = l.Titulo;
+            if (grid.SelectedItem != null)
+            {
+                Autor l = grid.SelectedItem as Autor;
+                txtBiografia.Text = l.Biografia;
+                txtNome.Text = l.Nome;
             }
         }
     }

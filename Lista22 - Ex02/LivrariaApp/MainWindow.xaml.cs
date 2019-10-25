@@ -32,5 +32,11 @@ namespace LivrariaApp
             LivroWindow j2 = new LivroWindow();
             j2.ShowDialog();
         }
+
+        private void AutorClick(object sender, RoutedEventArgs e)
+        {
+            AutorWindow j3 = new AutorWindow();
+            j3.ShowDialog();
+        }
     }
 }
