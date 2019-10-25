@@ -53,8 +53,11 @@ namespace Negocio
             int m = 0;
             foreach (Game x in jg) if (x.Id > m) m = x.Id;
             g.Id = m + 1;
+            if (g.Estrelas < 1 || g.Estrelas > 5) throw new ArgumentOutOfRangeException("Estrelas", "No mínimo 1 estrela e no máximo 5 estrelas");
+            else { 
             jg.Add(g);
             p.Save(jg);
+            }
         }
         public void Delete(Game g)
         {
