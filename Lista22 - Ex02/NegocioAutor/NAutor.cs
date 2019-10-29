@@ -19,37 +19,25 @@ namespace NegocioAutor
         public void Insert(Autor a)
         {
             List<Autor> la = p.Open();
-            int m = 0;
-            foreach (Autor i in la) if (m < i.Id) m = i.Id;
-            a.Id = m + 1;
+            int id = 1;
+            if (la.Count > 0) id = la.Max(x => x.Id) + 1;
+            a.Id = id;
             la.Add(a);
             p.Save(la);
         }
         public void Update(Autor a)
         {
             List<Autor> la = p.Open();
-            for(int i = 0; i < la.Count; i++)
-            {
-                if(a.Id == la[i].Id)
-                {
-                    la.RemoveAt(i);
-                    break;
-                }
-            }
+            Autor au = la.Where(x => x.Id == a.Id).Single();
+            la.Remove(au);
             la.Add(a);
             p.Save(la);
         }
         public void Delete(Autor a)
         {
             List<Autor> la = p.Open();
-            for (int i = 0; i < la.Count; i++)
-            {
-                if (a.Id == la[i].Id)
-                {
-                    la.RemoveAt(i);
-                    break;
-                }
-            }
+            Autor au = la.Where(x => x.Id == a.Id).Single();
+            la.Remove(au);
             p.Save(la);
         }
     }

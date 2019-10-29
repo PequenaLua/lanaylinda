@@ -19,37 +19,25 @@ namespace NegocioLivro
         public void Insert(Livro a)
         {
             List<Livro> la = p.Open();
-            int m = 0;
-            foreach (Livro i in la) if (i.Id > m) m = i.Id;
-            a.Id = m + 1;
+            int id = 1;
+            if(la.Count > 1) id = la.Max(x => x.Id) + 1;
+            a.Id = id;
             la.Add(a);
             p.Save(la);
         }
         public void Update(Livro a)
         {
             List<Livro> la = p.Open();
-            for (int i = 0; i < la.Count; i++)
-            {
-                if (a.Id == la[i].Id)
-                {
-                    la.RemoveAt(i);
-                    break;
-                }
-            }
+            Livro l = la.Where(x => x.Id == a.Id).Single();
+            la.Remove(l);
             la.Add(a);
             p.Save(la);
         }
         public void Delete(Livro a)
         {
             List<Livro> la = p.Open();
-            for (int i = 0; i < la.Count; i++)
-            {
-                if (a.Id == la[i].Id)
-                {
-                    la.RemoveAt(i);
-                    break;
-                }
-            }
+            Livro l = la.Where(x => x.Id == a.Id).Single();
+            la.Remove(l);
             p.Save(la);
         }
     }

@@ -7,6 +7,30 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="139*"/>
+            <ColumnDefinition Width="125*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Height="90" Grid.ColumnSpan="2">
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Nome" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="156,10,0,0" TextWrapping="Wrap" Text="Fabricante" VerticalAlignment="Top"/>
+            <TextBlock HorizontalAlignment="Left" Margin="280,10,0,0" TextWrapping="Wrap" Text="Data de compra" VerticalAlignment="Top"/>
+            <TextBox Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="10,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="134"/>
+            <TextBox Name="txtFab" HorizontalAlignment="Left" Height="23" Margin="156,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="109"/>
+            <TextBox Name="txtData" HorizontalAlignment="Left" Height="23" Margin="280,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="123"/>
+            <Button Click="SelectClick" Content="Listar" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="85"/>
+            <Button Click="InsertClick" Content="Inserir" HorizontalAlignment="Left" Margin="100,60,0,0" VerticalAlignment="Top" Width="85"/>
+            <Button Click="UpdateClick" Content="Atualizar" HorizontalAlignment="Left" Margin="190,60,0,0" VerticalAlignment="Top" Width="85"/>
+            <Button Click="DeleteClick" Content="Excluir" HorizontalAlignment="Left" Margin="280,60,0,0" VerticalAlignment="Top" Width="85"/>
+            <Button Click="Top10Click" Content="Top 10" HorizontalAlignment="Left" Margin="478,60,0,0" VerticalAlignment="Top" Width="85"/>
+            <Button Click="SelectDataClick" Content="Listar pela data" HorizontalAlignment="Left" Margin="378,60,0,0" VerticalAlignment="Top" Width="86"/>
+            <TextBox x:Name="txtEstrelas" HorizontalAlignment="Left" Height="23" Margin="417,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="68"/>
+            <TextBlock HorizontalAlignment="Left" Margin="417,11,0,0" TextWrapping="Wrap" Text="Estrelas" VerticalAlignment="Top"/>
+        </Grid>
+        <DataGrid IsReadOnly="True" Grid.Row="1" Name="grid" SelectionChanged="grid_SelectionChanged" Grid.ColumnSpan="2" Margin="5"/>
     </Grid>
 </Window>
